@@ -1,1 +1,16 @@
-<div>app-works</div>
+<nav class="h-auto d-flex justify-content-center align-items-center">
+  <div class="border border-2 my-2">
+    <div class="d-flex justify-content-center align-items-center flex-wrap">
+      @for (navButton of navButtons; track navButton.icon){
+        <div
+        class="mx-4 d-flex align-items-center"
+        role="button"
+        [matTooltip]="navButton.label"
+        #tooltip="matTooltip"
+      >
+        <span class="material-symbols-outlined"> {{navButton.icon}} </span>
+      </div>
+      }
+    </div>
+  </div>
+</nav>
