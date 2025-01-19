@@ -9,9 +9,9 @@
   border: solid 1px #ccc;
 }
 
-.example-accordion-item + .example-accordion-item {
-  border-top: none;
-}
+// .example-accordion-item + .example-accordion-item {
+//   border-top: none;
+// }
 
 .example-accordion-item-header {
   display: flex;
@@ -32,7 +32,7 @@
 .example-accordion-item-body {
   padding: 16px;
   backdrop-filter: blur(10px);
-  background: none;
+//   background: none;
 }
 
 .example-accordion-item-header:hover {
