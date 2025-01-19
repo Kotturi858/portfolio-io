@@ -1,16 +1,13 @@
-<nav class="h-auto d-flex justify-content-center align-items-center">
-  <div class="border border-2 my-2">
-    <div class="d-flex justify-content-center align-items-center flex-wrap">
-      @for (navButton of navButtons; track navButton.icon){
-        <div
-        class="mx-4 d-flex align-items-center"
-        role="button"
-        [matTooltip]="navButton.label"
-        #tooltip="matTooltip"
-      >
-        <span class="material-symbols-outlined"> {{navButton.icon}} </span>
-      </div>
-      }
-    </div>
+<div
+  class="home container-fluid bg-body-tertiary card min-vh-100 border-0 rounded-0 p-0"
+  data-bs-theme="dark"
+>
+  <app-navbar></app-navbar>
+
+  
+  <div class="container">
+    <app-home id="home"></app-home>
+    <app-about id="about"></app-about>
+    <app-contact id="contacts"></app-contact>
   </div>
-</nav>
+</div>

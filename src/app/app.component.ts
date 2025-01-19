@@ -1,20 +1,28 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { TooltipPosition, MatTooltipModule } from '@angular/material/tooltip';
+import {
+  RouterOutlet
+} from '@angular/router';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { HomeComponent } from './pages/home/home.component';
+import { NavbarComponent } from './pages/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MatTooltipModule],
+  imports: [
+    RouterOutlet,
+    CommonModule,
+    NavbarComponent,
+    HomeComponent,
+    ContactComponent,
+    AboutComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  animations: [],
 })
 export class AppComponent {
-  navButtons = [
-    { label: 'HOME', icon: 'home' },
-    { label: 'THEME', icon: 'person' },
-    { label: 'PROJECTS', icon: 'tactic' },
-    { label: 'CONTACT ME', icon: 'contact_mail' },
-    { label: 'RESUME', icon: 'description' },
-    { label: 'ROUTINE', icon: 'routine' },
-  ];
+
+  constructor() {}
 }
