@@ -1,6 +1,4 @@
 .example-accordion {
-  //   display: block;
-  // max-width: fit-content;
   z-index: -1;
 }
 
@@ -8,10 +6,6 @@
   display: block;
   border: solid 1px #ccc;
 }
-
-// .example-accordion-item + .example-accordion-item {
-//   border-top: none;
-// }
 
 .example-accordion-item-header {
   display: flex;
@@ -25,18 +19,12 @@
   background: none;
 }
 
-.example-accordion-item-description {
-//   font-size: 0.85em;
-}
-
 .example-accordion-item-body {
   padding: 16px;
   backdrop-filter: blur(10px);
-//   background: none;
 }
 
 .example-accordion-item-header:hover {
   cursor: pointer;
-  //   background-color: #eee;
 }
 
