@@ -17,7 +17,7 @@
       >
         {{ item }}
       </button>
-      @if(accordionItem.expanded) {
+      @if(accordionItem.expanded && index === 0) {
       <div class="row d-flex justify-content-between flex-wrap mx-3">
         @for(item of extractvalues(); track item; let index1 = $index) {
         <div class="section col-md-4 col-12 my-2">
@@ -56,11 +56,12 @@
                 aria-valuenow="75"
                 aria-valuemin="0"
                 aria-valuemax="100"
-                [matTooltip]="skill.learnedStatus/10 + '/' + 10"
+                [matTooltip]="skill.learnedStatus / 10 + '/' + 10"
                 #tooltip="matTooltip"
               >
                 <div
-                  class="progress-bar progress-bar-striped bg-success"
+                  class="progress-bar progress-bar-striped"
+                  [ngClass]="getDynamicStyles(skill.learnedStatus)"
                   [style.width.%]="skill.learnedStatus"
                 ></div>
               </div>
@@ -70,6 +71,9 @@
         </div>
         }
       </div>
+      }
+      @if(accordionItem.expanded && index === 1) {
+        <div>nene experiednced ra fumka</div>
       }
     </cdk-accordion-item>
     }

@@ -11,7 +11,6 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
 @Component({
   selector: 'app-root',
   imports: [
-    RouterOutlet,
     CommonModule,
     NavbarComponent,
     HomeComponent,
