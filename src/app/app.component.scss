@@ -5,7 +5,7 @@
 
 .home {
   background-image: url("../assets/bg-dark.png");
-  background-size: cover; /* Ensures the image covers the entire screen */
+  background-size: contain; /* Ensures the image covers the entire screen */
   background-position: left; /* Centers the image */
   background-repeat: repeat-y; /* Ensures the image doesn't repeat */
   //margin: 0; /* Removes default margin */

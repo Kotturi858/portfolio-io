@@ -13,38 +13,63 @@
         [attr.id]="'accordion-header-' + index"
         [attr.aria-expanded]="accordionItem.expanded"
         [attr.aria-controls]="'accordion-body-' + index"
+        style="font-family: 'Kaushan Script', serif"
       >
         {{ item }}
       </button>
       @if(accordionItem.expanded) {
-      <div
-        class="example-accordion-item-body d-flex gap-3 flex-wrap"
-        role="region"
-        [style.display]="accordionItem.expanded ? '' : 'none'"
-        [attr.id]="'accordion-body-' + index"
-        [attr.aria-labelledby]="'accordion-header-' + index"
-      >
-      <img src="../../../assets/tech-icons/java-original-wordmark.svg" width="100px" alt="angular-original">
-      <img src="../../../assets/tech-icons/javascript-original.svg" width="100px" alt="angular-original">
-      <img src="../../../assets/tech-icons/typescript-original.svg" width="100px" alt="angular-original">
-      <img src="../../../assets/tech-icons/angular-original.svg" width="100px" alt="angular-original">
-      <img src="../../../assets/tech-icons/angular-original.svg" width="100px" alt="angular-original">
-      <img src="../../../assets/tech-icons/angular-original.svg" width="100px" alt="angular-original">
-      <img src="../../../assets/tech-icons/angular-original.svg" width="100px" alt="angular-original">
-      <img src="../../../assets/tech-icons/angular-original.svg" width="100px" alt="angular-original">
-      <img src="../../../assets/tech-icons/angular-original.svg" width="100px" alt="angular-original">
-      <img src="../../../assets/tech-icons/angular-original.svg" width="100px" alt="angular-original">
-      <img src="../../../assets/tech-icons/angular-original.svg" width="100px" alt="angular-original">
-      <img src="../../../assets/tech-icons/angular-original.svg" width="100px" alt="angular-original">
-      <img src="../../../assets/tech-icons/angular-original.svg" width="100px" alt="angular-original">
-      <img src="../../../assets/tech-icons/angular-original.svg" width="100px" alt="angular-original">
-      <img src="../../../assets/tech-icons/angular-original.svg" width="100px" alt="angular-original">
-      <img src="../../../assets/tech-icons/angular-original.svg" width="100px" alt="angular-original">
-      <img src="../../../assets/tech-icons/angular-original.svg" width="100px" alt="angular-original">
-      <img src="../../../assets/tech-icons/angular-original.svg" width="100px" alt="angular-original">
-      <img src="../../../assets/tech-icons/angular-original.svg" width="100px" alt="angular-original">
-      <img src="../../../assets/tech-icons/angular-original.svg" width="100px" alt="angular-original">
-    </div>
+      <div class="row d-flex justify-content-between flex-wrap mx-3">
+        @for(item of extractvalues(); track item; let index1 = $index) {
+        <div class="section col-md-4 col-12 my-2">
+          <div
+            class="px-sm-2"
+            style="
+              font-family: 'Montserrat Subrayada', serif;
+              font-weight: 700;
+              font-style: normal;
+            "
+          >
+            {{ item }}
+          </div>
+          <div
+            class="example-accordion-item-body d-flex gap-3 flex-wrap px-2"
+            role="region"
+            [style.display]="accordionItem.expanded ? '' : 'none'"
+            [attr.id]="'accordion-body-' + index"
+            [attr.aria-labelledby]="'accordion-header-' + index"
+          >
+            @for(skill of skillTags[item]; track skill.tooltip; let index2 =
+            $index) {
+            <div>
+              <img
+                src="../../../assets/tech-icons/{{ skill.assetDet }}"
+                width="50px"
+                [alt]="skill.tooltip"
+                [matTooltip]="skill.tooltip"
+                #tooltip="matTooltip"
+              />
+              <div
+                class="progress mt-2"
+                style="height: 6px"
+                role="progressbar"
+                aria-label="Basic example"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                [matTooltip]="skill.learnedStatus/10 + '/' + 10"
+                #tooltip="matTooltip"
+              >
+                <div
+                  class="progress-bar progress-bar-striped bg-success"
+                  [style.width.%]="skill.learnedStatus"
+                ></div>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+        }
+      </div>
       }
     </cdk-accordion-item>
     }
