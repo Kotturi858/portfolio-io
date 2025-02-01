@@ -1,3 +1,5 @@
+<p>bharath</p>
+<p>bharath</p>
 <div my-5>
   <cdk-accordion class="example-accordion w-100 z-n1">
     @for (item of items; track item; let index = $index) {
@@ -72,7 +74,63 @@
         }
       </div>
       } @if(accordionItem.expanded && index === 1) {
-      <div>nene experiednced ra fumka</div>
+      <div class="container mt-3">
+        <div class="stepper">
+          <div class="step" style="backdrop-filter: blur(5px)">
+            <div class="circle"></div>
+            <h5>Full Stack Developer - Infosys</h5>
+            <p class="text-muted mb-2">September 2021 - Present</p>
+            <p class="mb-1">
+              Working on a migration project from scratch, developing a fully
+              functional application for a leading car manufacturing company.
+            </p>
+            <p class="mb-1">
+              Expertise in Angular, Java Spring Boot, and Node.js.
+            </p>
+            <p class="mb-1">
+              Performing functional and unit testing while mentoring my team.
+            </p>
+          </div>
+          <div class="step" style="backdrop-filter: blur(5px)">
+            <div class="circle"></div>
+            <h5>Apprenticeship - ECIL</h5>
+            <p class="text-muted mb-2">June 2017 - November 2017</p>
+            <p class="mb-1">
+              Contributed to the Continuous Air Monitoring Equipment project,
+              focused on detecting radiation in the atmosphere.
+            </p>
+            <p class="mb-1">
+              Designed and structured the circuit using Eagle software, laying
+              the groundwork for successful project execution.
+            </p>
+          </div>
+        </div>
+      </div>
+      } @if(accordionItem.expanded && index === 2) {
+      <div class="container mt-3">
+        <div class="stepper">
+          <div class="step" style="backdrop-filter: blur(5px)">
+            <div class="circle"></div>
+            <h5>University college of Engineering- Osmania University,</h5>
+            <p class="text-muted mb-2">Hyderabad— Bachelor of Engineering</p>
+            <p class="mb-1">August 2018 - July 2021</p>
+          </div>
+          <div class="step" style="backdrop-filter: blur(5px)">
+            <div class="circle"></div>
+            <h5>Government Institute of Electronics</h5>
+            <p class="text-muted mb-2">
+              Hyderabad— Diploma in communication Networks
+            </p>
+            <p class="mb-1">September 2014 - December 2017</p>
+          </div>
+          <div class="step" style="backdrop-filter: blur(5px)">
+            <div class="circle"></div>
+            <h5>Sri Sai Public School, ICSE Affiliated</h5>
+            <p class="text-muted mb-2">Hyderabad—10th board</p>
+            <p class="mb-1">September 2014 - December 2017</p>
+          </div>
+        </div>
+      </div>
       }
     </cdk-accordion-item>
     }

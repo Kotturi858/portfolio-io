@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
 import { CdkAccordionModule } from '@angular/cdk/accordion';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 // Define the type for a skill object
 interface Skill {
@@ -13,7 +12,7 @@ interface Skill {
 
 // Define the type for the skillTags object
 interface SkillTags {
-  [key: string]: Skill[]; // Index signature
+  [key: string]: Skill[];
   languages: Skill[];
   frameworks: Skill[];
   databases: Skill[];
