@@ -5,14 +5,11 @@
     <div class="d-flex justify-content-center align-items-center flex-wrap">
       @for (navButton of navButtons; track navButton.icon){
       <a
-        class="uthine mx-3 d-flex align-items-center text-decoration-none text-light"
+        class="uthine mx-3 d-flex align-items-center text-decoration-none"
         role="button"
         [matTooltip]="navButton.tooltip"
         #tooltip="matTooltip"
         [href]="navButton.label"
-        [class.active]="activeSection === navButton.label"
-        [class.underline]="true"
-        [class.red]="true"
       >
         <span
           class="material-symbols-outlined"

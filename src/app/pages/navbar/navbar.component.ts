@@ -14,7 +14,7 @@ export class NavbarComponent {
     { label: '#home', icon: 'home', tooltip: 'HOME' },
     { label: '#about', icon: 'person', tooltip: 'ABOUT' },
     { label: '#projects', icon: 'tactic', tooltip: 'PROJECTS' },
-    { label: '#contacts', icon: 'contact_mail', tooltip: 'CONTACTS' },
+    { label: '#contacts', icon: 'contact_mail', tooltip: 'CONTACT' },
     { label: '#Resume', icon: 'description', tooltip: 'RESUME' },
   ];
 
@@ -26,11 +26,6 @@ export class NavbarComponent {
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event): void {
     const sections = ['#home', '#about', '#contacts'];
-    const scrollPosition =
-      window.pageYOffset ||
-      document.documentElement.scrollTop ||
-      document.body.scrollTop ||
-      0;
 
     sections.forEach((section) => {
       const element = document.getElementById(section.substring(1));

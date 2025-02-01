@@ -3,7 +3,7 @@
     @for (item of items; track item; let index = $index) {
     <cdk-accordion-item
       #accordionItem="cdkAccordionItem"
-      class="example-accordion-item"
+      class="example-accordion-item border border-1 border-light"
       [expanded]="item == 'SKILLS'"
     >
       <button
@@ -71,9 +71,8 @@
         </div>
         }
       </div>
-      }
-      @if(accordionItem.expanded && index === 1) {
-        <div>nene experiednced ra fumka</div>
+      } @if(accordionItem.expanded && index === 1) {
+      <div>nene experiednced ra fumka</div>
       }
     </cdk-accordion-item>
     }
