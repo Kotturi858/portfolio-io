@@ -25,7 +25,7 @@ export class NavbarComponent {
 
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event): void {
-    const sections = ['#home', '#about', '#contacts'];
+    const sections = ['#home', '#about', '#contacts', '#projects'];
 
     sections.forEach((section) => {
       const element = document.getElementById(section.substring(1));
