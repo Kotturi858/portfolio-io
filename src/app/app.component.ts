@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { FooterComponent } from './pages/footer/footer.component';
+import { ResumeComponent } from './pages/resume/resume.component';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ import { FooterComponent } from './pages/footer/footer.component';
     AboutComponent,
     ProjectsComponent,
     FooterComponent,
+    ResumeComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

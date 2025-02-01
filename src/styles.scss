@@ -1,28 +1,24 @@
-
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 
 html {
-  @include mat.theme((
-    color: (
-      theme-type: light,
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
-    ),
-    typography: Roboto,
-    density: 0,
-  ));
+  @include mat.theme(
+    (
+      color: (
+        theme-type: light,
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    )
+  );
 }
 
-// body {
-//   // background-image: url("assets/wallhaven-wyo5xp_1920x1080.png");
-//   background-size: cover; /* Ensures the image covers the entire screen */
-//   background-position: center; /* Centers the image */
-//   background-repeat: no-repeat; /* Ensures the image doesn't repeat */
-//   margin: 0; /* Removes default margin */
-//   height: 100vh; /* Makes sure the body takes up the full viewport height */
-// } /* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
