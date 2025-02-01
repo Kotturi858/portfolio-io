@@ -6,11 +6,10 @@
     <cdk-accordion-item
       #accordionItem="cdkAccordionItem"
       class="example-accordion-item border border-1 border-light"
-      [expanded]="item == 'SKILLS'"
+      expanded="true"
     >
       <button
         class="example-accordion-item-header"
-        (click)="accordionItem.toggle()"
         tabindex="0"
         [attr.id]="'accordion-header-' + index"
         [attr.aria-expanded]="accordionItem.expanded"
