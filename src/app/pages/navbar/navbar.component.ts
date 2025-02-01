@@ -15,7 +15,7 @@ export class NavbarComponent {
     { label: '#about', icon: 'person', tooltip: 'ABOUT' },
     { label: '#projects', icon: 'tactic', tooltip: 'PROJECTS' },
     { label: '#contacts', icon: 'contact_mail', tooltip: 'CONTACT' },
-    { label: '#Resume', icon: 'description', tooltip: 'RESUME' },
+    { label: '#resume', icon: 'description', tooltip: 'RESUME' },
   ];
 
   public activeSection: string = '';
@@ -25,7 +25,7 @@ export class NavbarComponent {
 
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event): void {
-    const sections = ['#home', '#about', '#contacts', '#projects'];
+    const sections = ['#home', '#about', '#contacts', '#projects', '#resume'];
 
     sections.forEach((section) => {
       const element = document.getElementById(section.substring(1));
