@@ -7,10 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
-  downloadResume() {
-    const link = document.createElement('a');
-    link.href = 'assets/Bharath_Kotturi.pdf';
-    link.download = 'Bharath_Kotturi.pdf';
-    link.click();
-  }
+  
 }

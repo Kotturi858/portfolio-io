@@ -27,4 +27,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     ]),
   ],
 })
-export class HomeComponent {}
+export class HomeComponent {
+  redirect(url: string) {
+    window.open(url, '_blank');
+  }
+}
