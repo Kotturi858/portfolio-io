@@ -1,18 +1,18 @@
-<div my-5>
+<div>
   <cdk-accordion class="example-accordion w-100 z-n1">
     @for (item of items; track item; let index = $index) {
     <cdk-accordion-item
       #accordionItem="cdkAccordionItem"
-      class="example-accordion-item border border-1 border-light"
+      class="example-accordion-item border border-0"
       expanded="true"
     >
       <button
-        class="example-accordion-item-header"
+        class="example-accordion-item-header fs-2"
         tabindex="0"
         [attr.id]="'accordion-header-' + index"
         [attr.aria-expanded]="accordionItem.expanded"
         [attr.aria-controls]="'accordion-body-' + index"
-        style="font-family: 'Kaushan Script', serif"
+        style="font-family: 'Montserrat Subrayada', serif;"
       >
         {{ item }}
       </button>
@@ -71,7 +71,7 @@
         }
       </div>
       } @if(accordionItem.expanded && index === 1) {
-      <div class="container mt-3">
+      <div class="container mt-3 mx-0">
         <div class="stepper">
           <div class="step" style="backdrop-filter: blur(5px)">
             <div class="circle"></div>
@@ -104,7 +104,7 @@
         </div>
       </div>
       } @if(accordionItem.expanded && index === 2) {
-      <div class="container mt-3">
+      <div class="container mt-3 mx-0">
         <div class="stepper">
           <div class="step" style="backdrop-filter: blur(5px)">
             <div class="circle"></div>
