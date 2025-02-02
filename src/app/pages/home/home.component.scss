@@ -1,51 +1,11 @@
 .profile-container {
-  background-color: #e8e2f3; /* Light purple background */
-  padding: 40px;
   text-align: left;
   width: fit-content;
   font-family: Arial, sans-serif;
-}
-
-.role-title {
-  font-size: 1.2rem;
-  color: #333;
-  margin: 0;
-}
-
-.greeting {
-  font-weight: bold;
-  color: #000;
-  font-size: 2.5rem;
-}
-
-h1 {
-  display: inline;
-  font-size: 2rem;
-  color: #333;
 }
 
 .name {
   font-size: 2.5rem;
   color: #6d4ba8; /* Purple color for the name */
   margin: 10px 0;
-}
-
-.description {
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.contact-button {
-  background-color: #000;
-  color: #fff;
-  border: none;
-  padding: 15px 30px;
-  font-size: 1rem;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.contact-button:hover {
-  background-color: #333;
 }
