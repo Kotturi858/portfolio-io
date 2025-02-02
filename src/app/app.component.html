@@ -1,20 +1,20 @@
-<!-- <div class="container-fluid custom-scrollbar"> -->
+<div class="container-fluid custom-scrollbar px-0">
   <app-navbar></app-navbar>
-<div
-  class="home container-fluid min-vh-100 border-0 rounded-0"
-  data-bs-theme="dark"
->
-  <div class="container-fluid">
-    <app-home id="home"></app-home>
-    <app-about id="about"></app-about>
-    <app-projects id="projects"></app-projects>
-    <app-contact id="contacts"></app-contact>
-    <app-resume id="resume"></app-resume>
-    <app-footer id="footer"></app-footer>
+  <div
+    class="home container-fluid min-vh-100 border-0 rounded-0"
+    data-bs-theme="dark"
+  >
+    <div class="container-fluid">
+      <app-home id="home"></app-home>
+      <app-about id="about"></app-about>
+      <app-projects id="projects"></app-projects>
+      <app-contact id="contacts"></app-contact>
+      <app-resume id="resume"></app-resume>
+      <app-footer id="footer"></app-footer>
+    </div>
+    <button class="Btn position-fixed bottom-0 m-4" (click)="navigateToTop()">
+      <span class="arrow material-symbols-outlined"> arrow_upward </span>
+      <p class="text">Back to Topp</p>
+    </button>
   </div>
-  <button class="Btn position-fixed bottom-0 m-4" (click)="navigateToTop()">
-    <span class="arrow material-symbols-outlined"> arrow_upward </span>
-    <p class="text">Back to Topp</p>
-  </button>
 </div>
-<!-- </div> -->
