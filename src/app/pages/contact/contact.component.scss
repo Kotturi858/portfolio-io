@@ -2,21 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   text-align: center;
   background: transparent;
   color: #fff;
-}
-
-.about-container {
-  max-width: 670px;
-  padding: 20px;
-}
-
-.profile-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .profile-img {
@@ -56,12 +44,6 @@
   opacity: 0.8;
 }
 
-.skills-section,
-.contact-section,
-.info-section {
-  margin-top: 20px;
-}
-
 .skills-icons .material-icons {
   font-size: 36px;
   margin: 10px;
@@ -73,32 +55,10 @@
   justify-content: center;
   margin-top: 10px;
   text-decoration: none;
-  color: #fff;
+  color: #000;
   transition: opacity 0.3s;
 }
 
 .contact-section a:hover {
   opacity: 0.7;
-}
-
-.download-btn {
-  background: none;
-  border: 2px solid white;
-  padding: 10px 15px;
-  color: white;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.download-btn .material-icons {
-  margin-right: 8px;
-}
-
-.download-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
 }

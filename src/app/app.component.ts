@@ -26,4 +26,11 @@ import { ResumeComponent } from './pages/resume/resume.component';
 })
 export class AppComponent {
   constructor() {}
+
+  navigateToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Smooth scroll
+    });
+  }
 }

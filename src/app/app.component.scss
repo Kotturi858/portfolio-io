@@ -1,13 +1,24 @@
-.navbar {
-  position: fixed;
-  backdrop-filter: blur(3px);
+// .navbar {
+//   position: fixed;
+//   backdrop-filter: blur(3px);
+// }
+.home {
+  background: linear-gradient(270deg, #ff7e5f, #feb47b, #6b5b95);
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s ease infinite;
 }
 
-.home {
-  background-image: url("../assets/bg-dark.png");
-  background-size: contain; /* Ensures the image covers the entire screen */
-  background-position: left; /* Centers the image */
-  background-repeat: repeat-y; /* Ensures the image doesn't repeat */
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .Btn {
@@ -15,7 +26,7 @@
   height: 45px;
   background: linear-gradient(blue, red);
   display: flex;
-  align-items: center;
+  align-items: center; 
   justify-content: center;
   border-radius: 50%;
   cursor: pointer;
@@ -56,3 +67,5 @@
     opacity: 1;
   }
 }
+
+
