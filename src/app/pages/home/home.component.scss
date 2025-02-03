@@ -1,11 +1,12 @@
+@import url(../../../styles.scss);
+
 .profile-container {
   text-align: left;
   width: fit-content;
-  font-family: Arial, sans-serif;
 }
 
 .name {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #6d4ba8; /* Purple color for the name */
   margin: 10px 0;
 }

@@ -2,6 +2,7 @@ import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { NgxFadeComponent } from '@omnedia/ngx-fade';
 
 // Define the type for a skill object
 interface Skill {
@@ -25,7 +26,12 @@ interface SkillTags {
 }
 @Component({
   selector: 'app-about',
-  imports: [CdkAccordionModule, MatTooltipModule, CommonModule],
+  imports: [
+    CdkAccordionModule,
+    MatTooltipModule,
+    CommonModule,
+    NgxFadeComponent,
+  ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
 })
