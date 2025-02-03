@@ -1,16 +1,10 @@
 import { Component } from '@angular/core';
+import { NgxNeonUnderlineComponent } from '@omnedia/ngx-neon-underline';
 
 @Component({
   selector: 'app-contact',
-  imports: [],
+  imports: [NgxNeonUnderlineComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
-export class ContactComponent {
-  downloadResume() {
-    const link = document.createElement('a');
-    link.href = 'assets/Bharath_Kotturi.pdf';
-    link.download = 'Bharath_Kotturi.pdf';
-    link.click();
-  }
-}
+export class ContactComponent {}

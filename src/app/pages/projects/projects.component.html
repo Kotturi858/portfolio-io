@@ -1,9 +1,12 @@
+<div style="font-family: 'Montserrat Subrayada', serif" class="fs-2 px-4">
+  PROJECTS
+</div>
 <div
-  class="d-flex w-100 justify-content-center align-items-center border border-1 my-3 py-4 flex-wrap"
+  class="container d-xl-grid d-flex flex-lg-row flex-row my-3 py-4 flex-wrap"
 >
   @for(project of projects; track project.name){
-  <div class="card mx-4">
-    <div class="d-flex align-items-center p-1 w-auto">
+  <div class="card mx-4 border p-3 text-center">
+    <div class="d-flex align-items-center py-1 w-auto">
       <div class="px-1">
         <span
           class="bg-danger d-inline-block d-flex align-items-center p-2 rounded-circle"
@@ -20,7 +23,46 @@
         ></span>
       </div>
     </div>
-    <div class="card__content">hie</div>
+    <div class="card__content">
+      <p
+        class="text-start fw-bolder fs-5 mb-1"
+        style="
+          font-family: 'Montserrat Subrayada', serif;
+          font-weight: 700;
+          font-style: normal;
+        "
+      >
+        Title : {{ project.name }}
+      </p>
+      <!-- <div> -->
+      <img
+        src="assets/{{ project.displayPic }}"
+        [alt]="project.displayPic"
+        class="w-100 px-3"
+        (click)="consolei(project.name)"
+        role="button"
+        style="max-height: 170px"
+      />
+      <p
+        class="text-start fs-5 mb-1 lh-1 mt-2"
+        style="
+          font-family: 'Montserrat Subrayada', serif;
+          font-weight: 700;
+          font-style: normal;
+        "
+      >
+        Description :
+      </p>
+      <p class="text-start fs-6 fw-normal">{{ project.description }}</p>
+      <button
+        mat-flat-button
+        class="text-black"
+        style="background-color: #feb47b"
+        (click)="consolei(project.name)"
+      >
+        DEMO
+      </button>
+    </div>
   </div>
   }
 </div>
