@@ -14,18 +14,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   imports: [MatTooltipModule, MatCardModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
-  animations: [
-    trigger('fadeInOnScroll', [
-      state(
-        'void',
-        style({
-          opacity: 0,
-          transform: 'translateX(100px)',
-        })
-      ),
-      transition(':enter', [animate('1s linear')]),
-    ]),
-  ],
 })
 export class HomeComponent {
   redirect(url: string) {
