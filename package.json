@@ -21,8 +21,6 @@
     "@angular/platform-browser-dynamic": "^19.0.0",
     "@angular/router": "^19.0.0",
     "@omnedia/ngx-fade": "^2.1.0",
-    "@omnedia/ngx-neon-underline": "^2.0.0",
-    "@omnedia/ngx-timeline": "^2.0.1",
     "bootstrap": "^5.3.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

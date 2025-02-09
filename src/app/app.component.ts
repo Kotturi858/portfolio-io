@@ -30,7 +30,7 @@ export class AppComponent {
   navigateToTop() {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth', // Smooth scroll
+      behavior: 'smooth', 
     });
   }
 }

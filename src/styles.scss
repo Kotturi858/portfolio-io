@@ -1,29 +1,27 @@
 @use "@angular/material" as mat;
 
 html {
-  @include mat.theme(
-    (
-      color: (
-        theme-type: light,
+  @include mat.theme((color: (theme-type: light,
         primary: mat.$azure-palette,
         tertiary: mat.$blue-palette,
       ),
       typography: Roboto,
       density: 0,
-    )
-  );
+    ));
 }
 
 html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: "Poppins", serif !important;
   font-weight: 200;
   font-style: normal;
 }
+
 /* For WebKit browsers (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
   width: 8px;
@@ -37,7 +35,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #feb47b; 
+  background: #feb47b;
   border-radius: 10px;
   opacity: 0.2;
 }
@@ -46,4 +44,3 @@ body {
   background: #feb47b;
   opacity: 1;
 }
-
