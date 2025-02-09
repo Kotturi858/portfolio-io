@@ -143,41 +143,79 @@ export class AboutComponent {
         learnedStatus: 50,
       },
     ],
-    concepts: [],
-    architecture: [],
+    concepts: [
+      {
+        assetDet: 'account_tree',
+        tooltip: 'Data Structures & Algorithms (DSA)',
+        learnedStatus: 70,
+      },
+      {
+        assetDet: 'lan',
+        tooltip: 'Networking Basics aka System Design',
+        learnedStatus: 60,
+      },
+      {
+        assetDet: 'pattern',
+        tooltip: 'Design Patterns',
+        learnedStatus: 70,
+      },
+      {
+        assetDet: 'category',
+        tooltip: 'Object-Oriented Programming (OOP)',
+        learnedStatus: 90,
+      },
+      {
+        assetDet: 'build_circle',
+        tooltip: 'CI/CD Pipelines',
+        learnedStatus: 50,
+      },
+      {
+        assetDet: 'table_chart',
+        tooltip: 'Database Indexing & Query Optimization',
+        learnedStatus: 80,
+      },
+    ],
+    architecture: [
+      {
+        assetDet: 'hub',
+        tooltip: 'Microservices',
+        learnedStatus: 90,
+      },
+      {
+        assetDet: 'apartment',
+        tooltip: 'Monolithic Architecture',
+        learnedStatus: 90,
+      },
+      {
+        assetDet: 'sync_alt',
+        tooltip: 'Event-Driven Architecture',
+        learnedStatus: 90,
+      },
+      {
+        assetDet: 'cloud',
+        tooltip: 'Serverless Architecture',
+        learnedStatus: 70,
+      },
+    ],
   };
 
   extractvalues() {
     return Object.keys(this.skillTags);
   }
 
-  // architecture: [
-  //   { name: 'Microservices', icon: 'hub' },
-  //   { name: 'Monolithic Architecture', icon: 'apartment' },
-  //   { name: 'Event-Driven Architecture', icon: 'sync_alt' },
-  //   { name: 'Serverless Architecture', icon: 'cloud' },
-  //   { name: 'Hexagonal Architecture', icon: 'widgets' },
-  //   { name: 'Layered Architecture', icon: 'view_list' },
-  //   { name: 'Clean Architecture', icon: 'cleaning_services' },
-  //   { name: 'CQRS', icon: 'split_screen' },
-  //   { name: 'Domain-Driven Design (DDD)', icon: 'category' },
-  //   { name: 'Message-Driven Architecture', icon: 'send' },
-  //   { name: 'SOA (Service-Oriented Architecture)', icon: 'settings_ethernet' }
-  // ];
-
   // concepts: [
-  //   { name: 'Data Structures & Algorithms (DSA)', icon: 'account_tree' },
-  //   { name: 'Object-Oriented Programming (OOP)', icon: 'category' },
+  //   { name: '', icon: 'account_tree' },
+  //   { name: '', icon: 'category' },
   //   { name: 'Functional Programming', icon: 'functions' },
-  //   { name: 'Design Patterns', icon: 'pattern' },
+  //   { name: '', icon: 'pattern' },
   //   { name: 'Concurrency & Multithreading', icon: 'device_hub' },
   //   { name: 'Caching Strategies', icon: 'memory' },
   //   { name: 'Distributed Systems', icon: 'cloud_sync' },
-  //   { name: 'Networking Basics', icon: 'lan' },
+  //   { name: '', icon: 'lan' },
   //   { name: 'Security & Authentication', icon: 'security' },
-  //   { name: 'CI/CD Pipelines', icon: 'build_circle' },
+  //   { name: '', icon: 'build_circle' },
   //   { name: 'API Design (REST & GraphQL)', icon: 'api' },
-  //   { name: 'Database Indexing & Query Optimization', icon: 'table_chart' },
+  //   { name: '', icon: 'table_chart' },
   //   { name: 'Big O Notation', icon: 'speed' }
   // ];
 
