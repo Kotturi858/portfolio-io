@@ -1,8 +1,14 @@
 import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+} from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgxFadeComponent } from '@omnedia/ngx-fade';
+import { NgxTracingBeamComponent } from '@omnedia/ngx-tracing-beam';
 
 // Define the type for a skill object
 interface Skill {
@@ -31,11 +37,14 @@ interface SkillTags {
     MatTooltipModule,
     CommonModule,
     NgxFadeComponent,
+    NgxTracingBeamComponent,
   ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AboutComponent {
+export class AboutComponent implements AfterViewInit {
+  constructor(private cdr: ChangeDetectorRef) {}
   items = ['SKILLS', 'EXPERIENCE', 'EDUCATION'];
   expandedIndex = 0;
   skillTags: SkillTags = {
@@ -203,21 +212,18 @@ export class AboutComponent {
     return Object.keys(this.skillTags);
   }
 
-  // concepts: [
-  //   { name: '', icon: 'account_tree' },
-  //   { name: '', icon: 'category' },
-  //   { name: 'Functional Programming', icon: 'functions' },
-  //   { name: '', icon: 'pattern' },
-  //   { name: 'Concurrency & Multithreading', icon: 'device_hub' },
-  //   { name: 'Caching Strategies', icon: 'memory' },
-  //   { name: 'Distributed Systems', icon: 'cloud_sync' },
-  //   { name: '', icon: 'lan' },
-  //   { name: 'Security & Authentication', icon: 'security' },
-  //   { name: '', icon: 'build_circle' },
-  //   { name: 'API Design (REST & GraphQL)', icon: 'api' },
-  //   { name: '', icon: 'table_chart' },
-  //   { name: 'Big O Notation', icon: 'speed' }
-  // ];
+  ngAfterViewInit() {
+    const updateView = () => {
+      this.cdr.detectChanges();
+      requestAnimationFrame(updateView);
+    };
+
+    requestAnimationFrame(updateView);
+
+    // setTimeout(() => {
+    //   this.cdr.detectChanges();
+    // }, 1);
+  }
 
   getDynamicStyles(skillStat: number) {
     switch (true) {
