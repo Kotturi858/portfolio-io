@@ -1,4 +1,4 @@
-<div>
+<div style="color: #F5F5F5;">
   <cdk-accordion class="example-accordion w-100 z-n1">
     @for (item of items; track item; let index = $index) {
     <cdk-accordion-item
@@ -6,7 +6,7 @@
       class="example-accordion-item border border-0"
       expanded="true"
     >
-      <button
+      <div
         class="example-accordion-item-header fs-2"
         tabindex="0"
         [attr.id]="'accordion-header-' + index"
@@ -14,8 +14,8 @@
         [attr.aria-controls]="'accordion-body-' + index"
         style="font-family: 'Montserrat Subrayada', serif; cursor: default"
       >
-        {{ item }}
-      </button>
+        {{item}}
+    </div>
       @if(accordionItem.expanded && index === 0) {
       <div class="row d-flex justify-content-between flex-wrap mx-3">
         @for(item of extractvalues(); track item; let index1 = $index) {
@@ -107,7 +107,7 @@
           <div>
             <div>
               <h5>Full Stack Developer - Infosys</h5>
-              <p class="text-black mb-2">September 2021 - Present</p>
+              <p class="mb-2">September 2021 - Present</p>
               <p class="mb-1">
                 Working on a migration project from scratch, developing a fully
                 functional application for a leading car manufacturing company.
@@ -122,7 +122,7 @@
             <div>
               <div class="circle"></div>
               <h5>Apprenticeship - ECIL</h5>
-              <p class="text-black mb-2">June 2017 - November 2017</p>
+              <p class="mb-2">June 2017 - November 2017</p>
               <p class="mb-1">
                 Contributed to the Continuous Air Monitoring Equipment project,
                 focused on detecting radiation in the atmosphere.
@@ -141,19 +141,17 @@
           <div>
             <div>
               <h5>University college of Engineering- Osmania University,</h5>
-              <p class="text-black mb-2">Hyderabad— Bachelor of Engineering</p>
+              <p class="mb-2">Hyderabad— Bachelor of Engineering</p>
               <p class="mb-1">August 2018 - July 2021</p>
             </div>
             <div>
               <h5>Government Institute of Electronics</h5>
-              <p class="text-black mb-2">
-                Hyderabad— Diploma in communication Networks
-              </p>
+              <p class="mb-2">Hyderabad— Diploma in communication Networks</p>
               <p class="mb-1">September 2014 - December 2017</p>
             </div>
             <div>
               <h5>Sri Sai Public School, ICSE Affiliated</h5>
-              <p class="text-black mb-2">Hyderabad—10th board</p>
+              <p class="mb-2">Hyderabad—10th board</p>
               <p class="mb-1">April 2014</p>
             </div>
           </div>
