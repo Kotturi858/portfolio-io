@@ -1,7 +1,8 @@
-<div class="d-flex justify-content-center">
+@if(iconsReady){<div class="d-flex justify-content-center">
   <nav
     class="navbar shadow h-auto d-flex justify-content-center align-items-center border border-1 rounded-pill my-2 z-3"
   >
+  
     <div class="d-flex justify-content-center align-items-center flex-wrap">
       @for (navButton of navButtons; track navButton.icon){
       <a
@@ -22,5 +23,7 @@
       </a>
       }
     </div>
+  
   </nav>
 </div>
+}

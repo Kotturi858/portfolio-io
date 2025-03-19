@@ -22,6 +22,7 @@
     "@angular/router": "^19.0.0",
     "@omnedia/ngx-fade": "^2.1.0",
     "@omnedia/ngx-tracing-beam": "^2.0.0",
+    "angular-animations": "^0.11.0",
     "bootstrap": "^5.3.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

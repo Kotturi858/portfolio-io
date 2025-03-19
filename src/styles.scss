@@ -22,7 +22,6 @@ body {
   font-style: normal;
 }
 
-/* For WebKit browsers (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -35,12 +34,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #feb47b;
+  background: #1F1F1F;
   border-radius: 10px;
   opacity: 0.2;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #feb47b;
+  background: #1F1F1F;
   opacity: 1;
 }

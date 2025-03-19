@@ -6,13 +6,18 @@
     class="d-flex align-items-center justify-content-center fs-5 flex-column mx-5 w-100"
   >
     <div class="profile-container w-auto">
-      <p class="m-0 text-black fs-5">Full-Stack Developer</p>
-      <h1><span class="text-black fw-bolder fs-1">Hi There</span>, I'm</h1>
+      <p class="m-0 fs-5">Full-Stack Developer</p>
+      <h1><span class="fw-bolder fs-1">Hi There</span>, I'm</h1>
       <h2 class="name">Bharath <mark>Kotturi</mark></h2>
-      <p class="text-black mb-3 fs-5">
+      <p class="mb-3 fs-5">
         Creative web developer crafting responsive, user-friendly websites.
         Let's bring your ideas to life with clean, modern design...
       </p>
+      <!-- <om-typewriter
+        [words]="[
+          'Creative web developer crafting responsive, user-friendly websites.Lets bring your ideas to life with clean, modern design...'
+        ]"
+      ></om-typewriter> -->
       <div
         class="fw-bold fs-1 fs-sm-6 text-center w-100 fst-italic d-flex justify-content-center gap-5 my-3"
       >
@@ -27,6 +32,7 @@
           role="button"
           xmlns="http://www.w3.org/2000/svg"
           (click)="redirect('https://discord.gg/4cYxYpMY')"
+          @swingOnEnter
         >
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
           <g
@@ -51,6 +57,7 @@
           xmlns="http://www.w3.org/2000/svg"
           fill="#fff"
           (click)="redirect('https://www.linkedin.com/in/bharath-kotturi/')"
+          @swingOnEnter
         >
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
           <g
@@ -75,6 +82,7 @@
           xmlns="http://www.w3.org/2000/svg"
           role="button"
           (click)="redirect('https://github.com/Kotturi858')"
+          @swingOnEnter
         >
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
           <g
@@ -95,18 +103,22 @@
     </div>
   </div>
   <div class="d-flex justify-content-center w-100">
-    <img src="assets/dp.svg" alt="developer" class="img-fluid w-75" />
+    <div>
+      <app-dpsvg class="d-flex justify-content-center"></app-dpsvg>
+    </div>
   </div>
 </div>
 <div
   class="d-flex justify-content-around flex-lg-row flex-column p-2 border-corner"
+  style="color: #f5f5f5"
+  @slideInLeftOnEnter
 >
   <div class="text-center">
     <h1
       class="d-flex flex-column text-center fw-bolder"
       style="font-size: 4rem"
     >
-      <div>+3</div>
+      <div @flipOnEnter>+3</div>
     </h1>
     <h4>Years Developing</h4>
   </div>
@@ -115,7 +127,7 @@
       class="d-flex flex-column text-center fw-bolder"
       style="font-size: 4rem"
     >
-      <div>+3</div>
+      <div @flipOnEnter>+3</div>
     </h1>
     <h4>Projects</h4>
   </div>
@@ -124,7 +136,7 @@
       class="d-flex flex-column text-center fw-bolder"
       style="font-size: 4rem"
     >
-      <div>&#8734;</div>
+      <div @flipOnEnter>&#8734;</div>
     </h1>
     <h4>Dedication</h4>
   </div>
