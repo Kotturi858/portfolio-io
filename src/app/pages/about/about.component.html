@@ -1,4 +1,4 @@
-<div style="color: #F5F5F5;">
+<div style="color: #f5f5f5">
   <cdk-accordion class="example-accordion w-100 z-n1">
     @for (item of items; track item; let index = $index) {
     <cdk-accordion-item
@@ -14,8 +14,8 @@
         [attr.aria-controls]="'accordion-body-' + index"
         style="font-family: 'Montserrat Subrayada', serif; cursor: default"
       >
-        {{item}}
-    </div>
+        {{ item }}
+      </div>
       @if(accordionItem.expanded && index === 0) {
       <div class="row d-flex justify-content-between flex-wrap mx-3">
         @for(item of extractvalues(); track item; let index1 = $index) {
@@ -102,7 +102,7 @@
         }
       </div>
       } @if(accordionItem.expanded && index === 1) {
-      <om-tracing-beam>
+      <om-tracing-beam [strokeColor]="'#e3e1e1'">
         <div class="container mt-3 mx-0 px-0">
           <div>
             <div>
@@ -136,7 +136,7 @@
         </div>
       </om-tracing-beam>
       } @if(accordionItem.expanded && index === 2) {
-      <om-tracing-beam>
+      <om-tracing-beam [strokeColor]="'#e3e1e1'">
         <div class="container mt-3 mx-0 px-0">
           <div>
             <div>
