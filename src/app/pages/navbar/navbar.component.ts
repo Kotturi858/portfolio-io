@@ -19,8 +19,10 @@ export class NavbarComponent {
   ];
 
   public activeSection: string = '';
+  iconsReady = false;
   ngOnInit(): void {
     this.activeSection = '#home';
+    setTimeout(() => (this.iconsReady = true), 100);
   }
 
   @HostListener('window:scroll', ['$event'])

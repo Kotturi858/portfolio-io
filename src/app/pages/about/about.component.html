@@ -1,4 +1,4 @@
-<div>
+<div style="color: #f5f5f5">
   <cdk-accordion class="example-accordion w-100 z-n1">
     @for (item of items; track item; let index = $index) {
     <cdk-accordion-item
@@ -6,7 +6,7 @@
       class="example-accordion-item border border-0"
       expanded="true"
     >
-      <button
+      <div
         class="example-accordion-item-header fs-2"
         tabindex="0"
         [attr.id]="'accordion-header-' + index"
@@ -15,7 +15,7 @@
         style="font-family: 'Montserrat Subrayada', serif; cursor: default"
       >
         {{ item }}
-      </button>
+      </div>
       @if(accordionItem.expanded && index === 0) {
       <div class="row d-flex justify-content-between flex-wrap mx-3">
         @for(item of extractvalues(); track item; let index1 = $index) {
@@ -102,63 +102,66 @@
         }
       </div>
       } @if(accordionItem.expanded && index === 1) {
-      <om-tracing-beam>
+      <om-tracing-beam [strokeColor]="'#e3e1e1'">
         <div class="container mt-3 mx-0 px-0">
           <div>
             <div>
-              <h5>Full Stack Developer - Infosys</h5>
-              <p class="text-black mb-2">September 2021 - Present</p>
-              <p class="mb-1">
-                Working on a migration project from scratch, developing a fully
-                functional application for a leading car manufacturing company.
-              </p>
-              <p class="mb-1">
-                Expertise in Angular, Java Spring Boot, and Node.js.
-              </p>
-              <p class="mb-1">
-                Performing functional and unit testing while mentoring my team.
-              </p>
+              <h4>Full Stack Developer - Infosys</h4>
+              <p class="mb-2">September 2021 - Present</p>
+              <ul class="achievements">
+                <li>
+                  Led the development of a mission-critical migration project
+                  for a leading automotive manufacturer, successfully delivering
+                  a full-stack application that improved operational efficiency
+                  by 40%
+                </li>
+                <li>
+                  Architected and implemented scalable solutions using Angular,
+                  Java Spring Boot, and Node.js, handling better data
+                  processing.
+                </li>
+                <li>
+                  Established robust testing protocols, achieving 95% code
+                  coverage through comprehensive unit and functional testing
+                </li>
+                <li>
+                  Mentored a team of 4 junior developers, conducting code
+                  reviews and technical sessions to enhance team capabilities
+                </li>
+                <li>
+                  Wrote unit test cases using Jasmine for frontend and JUnit for
+                  backend to maintain code quality and prevent regression
+                  issues.
+                </li>
+              </ul>
             </div>
             <div>
               <div class="circle"></div>
-              <h5>Apprenticeship - ECIL</h5>
-              <p class="text-black mb-2">June 2017 - November 2017</p>
-              <p class="mb-1">
-                Contributed to the Continuous Air Monitoring Equipment project,
-                focused on detecting radiation in the atmosphere.
-              </p>
-              <p class="mb-1">
-                Designed and structured the circuit using Eagle software, laying
-                the groundwork for successful project execution.
-              </p>
+              <h4>Apprenticeship - ECIL</h4>
+              <p class="mb-2">June 2017 - November 2017</p>
+              <ul class="achievements">
+                <li>
+                  Contributed to the Continuous Air Monitoring Equipment
+                  project, focused on detecting radiation in the atmosphere.
+                </li>
+                <li>
+                  Designed and structured the circuit using Eagle software,
+                  laying the groundwork for successful project execution.
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </om-tracing-beam>
       } @if(accordionItem.expanded && index === 2) {
-      <om-tracing-beam>
-        <div class="container mt-3 mx-0 px-0">
-          <div>
-            <div>
-              <h5>University college of Engineering- Osmania University,</h5>
-              <p class="text-black mb-2">Hyderabad— Bachelor of Engineering</p>
-              <p class="mb-1">August 2018 - July 2021</p>
-            </div>
-            <div>
-              <h5>Government Institute of Electronics</h5>
-              <p class="text-black mb-2">
-                Hyderabad— Diploma in communication Networks
-              </p>
-              <p class="mb-1">September 2014 - December 2017</p>
-            </div>
-            <div>
-              <h5>Sri Sai Public School, ICSE Affiliated</h5>
-              <p class="text-black mb-2">Hyderabad—10th board</p>
-              <p class="mb-1">April 2014</p>
-            </div>
-          </div>
-        </div>
-      </om-tracing-beam>
+      <om-timeline
+        [data]="timelineData"
+        [orientation]="'switch'"
+        [entriesGap]="'4rem'"
+        [titleGap]="'1rem'"
+        [gradientColors]="['red', 'yellow']"
+      >
+      </om-timeline>
       }
     </cdk-accordion-item>
     }

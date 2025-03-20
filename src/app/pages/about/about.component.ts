@@ -9,6 +9,7 @@ import {
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgxFadeComponent } from '@omnedia/ngx-fade';
 import { NgxTracingBeamComponent } from '@omnedia/ngx-tracing-beam';
+import { NgxTimelineComponent, TimelineEntry } from '@omnedia/ngx-timeline';
 
 // Define the type for a skill object
 interface Skill {
@@ -38,6 +39,7 @@ interface SkillTags {
     CommonModule,
     NgxFadeComponent,
     NgxTracingBeamComponent,
+    NgxTimelineComponent,
   ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
@@ -207,6 +209,45 @@ export class AboutComponent implements AfterViewInit {
       },
     ],
   };
+  timelineData: TimelineEntry[] = [
+    {
+      title: 'August 2018 - July 2021',
+      content: `<div class="education-item">
+          <h3>Bachelor of Engineering</h3>
+          <h4>University College of Engineering - Osmania University, Hyderabad</h4>
+          <ul class="achievements">
+            <li>Major in Electronics and Communication Engineering</li>
+            <li>Graduated with First Class Honors</li>
+            <li>Core coursework: Digital Signal Processing, Computer Networks, VLSI Design</li>
+            <li>Final year project: IoT-based Smart Home Automation System</li>
+          </ul>
+        </div>`,
+    },
+    {
+      title: 'September 2014 - December 2017',
+      content: `<div class="d-flex justify-content-between"><div></div><div class="education-item">
+          <h3>Diploma in Communication Networks</h3>
+          <h4>Government Institute of Electronics, Hyderabad</h4>
+          <ul class="achievements">
+            <li>Specialized in Network Infrastructure and Protocols</li>
+            <li>Completed hands-on training in network configuration and troubleshooting</li>
+            <li>Participated in state-level technical symposium</li>
+          </ul>
+        </div></div>`,
+    },
+    {
+      title: 'Completed April 2014',
+      content: `<div class="education-item">
+          <h3>Secondary Education (10th Board)</h3>
+          <h4>Sri Sai Public School, ICSE Affiliated, Hyderabad</h4>
+          <ul class="achievements">
+            <li>Achieved distinction in Mathematics and Science</li>
+            <li>Active participant in school's science club</li>
+            <li>Represented school in inter-school competitions</li>
+          </ul>
+        </div>`,
+    },
+  ];
 
   extractvalues() {
     return Object.keys(this.skillTags);

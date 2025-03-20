@@ -3,13 +3,24 @@
 .profile-container {
   text-align: left;
   width: fit-content;
+  color: #F5F5F5;
 }
 
 .name {
   font-size: 2.2rem;
-  color: #6d4ba8; /* Purple color for the name */
+  color: #9558ff;
   margin: 10px 0;
 }
+
+.svg-container {
+  background: url('../../../assets/background.svg') no-repeat center;
+  background-size: inherit;
+}
+
+.my-class {
+  font-size: 10px !important;
+}
+
 //custom border
 .border-corner {
   position: relative;
@@ -19,10 +30,9 @@
 .border-corner::after {
   content: "";
   position: absolute;
-  background-color: black;
+  background-color: #F5F5F5;
 }
 
-/* Top-left corner border */
 .border-corner::before {
   width: 50%;
   height: 2px;
@@ -30,7 +40,6 @@
   left: 0;
 }
 
-/* Bottom-right corner border */
 .border-corner::after {
   width: 50%;
   height: 2px;

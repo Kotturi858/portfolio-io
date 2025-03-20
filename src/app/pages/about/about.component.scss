@@ -8,7 +8,7 @@
 }
 
 .example-accordion-item-header {
-  color: black;
+  color: #fef9f3;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -31,42 +31,64 @@
 
 .section {
   background: rgba(255, 255, 255, 0.1);
-  /* Light background */
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-//VERTICAL BAR
-
-.stepper {
-  position: relative;
+.education-item {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+  color: #fef9f3;
 }
 
-.stepper::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 25px;
-  width: 2px;
-  height: 100%;
-  background-color: #feb47b;
-  box-shadow: 4px 4px 10px black;
-  z-index: 0;
+.education-item:last-child {
+  border-bottom: none;
 }
 
-.step {
-  position: relative;
-  padding-left: 50px;
-  margin-bottom: 30px;
+.education-item h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  // color: #2d3748;
+  margin-bottom: 0.5rem;
 }
 
-.step .circle {
-  width: 12px;
-  height: 12px;
-  background-color: #feb47b;
-  box-shadow: 4px 4px 10px black;
-  border-radius: 50%;
-  position: absolute;
-  left: 20px;
-  top: 5px;
+.education-item h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  // color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+.date {
+  // color: #666;
+  font-style: italic;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.achievements {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  // color: #4a5568;
+}
+
+.achievements li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .education-section {
+    padding: 1.5rem 0;
+  }
+
+  .education-item h3 {
+    font-size: 1.3rem;
+  }
+
+  .education-item h4 {
+    font-size: 1.1rem;
+  }
 }
