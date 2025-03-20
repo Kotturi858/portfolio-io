@@ -108,16 +108,6 @@
             <div>
               <h4>Full Stack Developer - Infosys</h4>
               <p class="mb-2">September 2021 - Present</p>
-              <!-- <p class="mb-1">
-                Working on a migration project from scratch, developing a fully
-                functional application for a leading car manufacturing company.
-              </p>
-              <p class="mb-1">
-                Expertise in Angular, Java Spring Boot, and Node.js.
-              </p>
-              <p class="mb-1">
-                Performing functional and unit testing while mentoring my team.
-              </p> -->
               <ul class="achievements">
                 <li>
                   Led the development of a mission-critical migration project
@@ -127,8 +117,8 @@
                 </li>
                 <li>
                   Architected and implemented scalable solutions using Angular,
-                  Java Spring Boot, and Node.js, handling data processing for
-                  over 100,000 daily transactions
+                  Java Spring Boot, and Node.js, handling better data
+                  processing.
                 </li>
                 <li>
                   Established robust testing protocols, achieving 95% code
@@ -139,8 +129,9 @@
                   reviews and technical sessions to enhance team capabilities
                 </li>
                 <li>
-                  Implemented CI/CD pipelines reducing deployment time by 60%
-                  and improving code quality
+                  Wrote unit test cases using Jasmine for frontend and JUnit for
+                  backend to maintain code quality and prevent regression
+                  issues.
                 </li>
               </ul>
             </div>
@@ -148,37 +139,14 @@
               <div class="circle"></div>
               <h4>Apprenticeship - ECIL</h4>
               <p class="mb-2">June 2017 - November 2017</p>
-              <!-- <p class="mb-1">
-                Contributed to the Continuous Air Monitoring Equipment project,
-                focused on detecting radiation in the atmosphere.
-              </p>
-              <p class="mb-1">
-                Designed and structured the circuit using Eagle software, laying
-                the groundwork for successful project execution.
-              </p> -->
               <ul class="achievements">
                 <li>
-                  Led the development of a mission-critical migration project
-                  for a leading automotive manufacturer, successfully delivering
-                  a full-stack application that improved operational efficiency
-                  by 40%
+                  Contributed to the Continuous Air Monitoring Equipment
+                  project, focused on detecting radiation in the atmosphere.
                 </li>
                 <li>
-                  Architected and implemented scalable solutions using Angular,
-                  Java Spring Boot, and Node.js, handling data processing for
-                  over 100,000 daily transactions
-                </li>
-                <li>
-                  Established robust testing protocols, achieving 95% code
-                  coverage through comprehensive unit and functional testing
-                </li>
-                <li>
-                  Mentored a team of 4 junior developers, conducting code
-                  reviews and technical sessions to enhance team capabilities
-                </li>
-                <li>
-                  Implemented CI/CD pipelines reducing deployment time by 60%
-                  and improving code quality
+                  Designed and structured the circuit using Eagle software,
+                  laying the groundwork for successful project execution.
                 </li>
               </ul>
             </div>
@@ -186,41 +154,14 @@
         </div>
       </om-tracing-beam>
       } @if(accordionItem.expanded && index === 2) {
-      <om-tracing-beam [strokeColor]="'#e3e1e1'">
-        <div class="education-item">
-          <h3>Bachelor of Engineering</h3>
-          <h4>University College of Engineering - Osmania University, Hyderabad</h4>
-          <p class="date">August 2018 - July 2021</p>
-          <ul class="achievements">
-            <li>Major in Electronics and Communication Engineering</li>
-            <li>Graduated with First Class Honors</li>
-            <li>Core coursework: Digital Signal Processing, Computer Networks, VLSI Design</li>
-            <li>Final year project: IoT-based Smart Home Automation System</li>
-          </ul>
-        </div>
-  
-        <div class="education-item">
-          <h3>Diploma in Communication Networks</h3>
-          <h4>Government Institute of Electronics, Hyderabad</h4>
-          <p class="date">September 2014 - December 2017</p>
-          <ul class="achievements">
-            <li>Specialized in Network Infrastructure and Protocols</li>
-            <li>Completed hands-on training in network configuration and troubleshooting</li>
-            <li>Participated in state-level technical symposium</li>
-          </ul>
-        </div>
-  
-        <div class="education-item">
-          <h3>Secondary Education (10th Board)</h3>
-          <h4>Sri Sai Public School, ICSE Affiliated, Hyderabad</h4>
-          <p class="date">Completed April 2014</p>
-          <ul class="achievements">
-            <li>Achieved distinction in Mathematics and Science</li>
-            <li>Active participant in school's science club</li>
-            <li>Represented school in inter-school competitions</li>
-          </ul>
-        </div>
-      </om-tracing-beam>
+      <om-timeline
+        [data]="timelineData"
+        [orientation]="'switch'"
+        [entriesGap]="'4rem'"
+        [titleGap]="'1rem'"
+        [gradientColors]="['red', 'yellow']"
+      >
+      </om-timeline>
       }
     </cdk-accordion-item>
     }

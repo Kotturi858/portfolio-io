@@ -62,3 +62,7 @@
 .contact-section a:hover {
   opacity: 0.7;
 }
+
+:host ::ng-deep .om-typewriter-text:after  {
+  background-color: #f5f5f5;
+}

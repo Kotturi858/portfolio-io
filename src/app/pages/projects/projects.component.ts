@@ -1,9 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-projects',
-  imports: [MatButtonModule],
+  imports: [MatButtonModule, CommonModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
 })
@@ -11,10 +12,17 @@ export class ProjectsComponent {
   projects = [
     {
       name: 'portfolio',
-      displayPic: 'portfolio-hommie.png',
+      displayPic: 'portfolio-hommie.jpeg',
       redirectionUrl: 'https://kotturi.netlify.app/',
       description:
         'This site helps create a closer connection between us while also offering me access to a wider range of opportunities. It fosters stronger interactions and provides the platform for both personal and professional growth through new possibilities.',
+      tags: [
+        'Angular',
+        'Bootstrap',
+        'NGXUI library',
+        'material',
+        'angular animations',
+      ],
     },
     {
       name: 'quizzie',
@@ -22,19 +30,22 @@ export class ProjectsComponent {
       redirectionUrl: '',
       description:
         'This site allows you to participate in quizzes across various programming languages, enabling you to test your skills and compete against other players. It provides a platform for learning, growth, and friendly competition in programming challenges.',
+      tags: ['Angular', 'PrimeNG', 'rxjs', 'Spring Boot', 'PostgreSQL'],
     },
     {
-      name: 'code-to-docx',
+      name: 'Kallos Galleria',
       displayPic: 'construction-crane-svgrepo-com.svg',
-      redirectionUrl: '',
-      description:
-        'This site allows you to convert code into a well-formatted Word document (.docx), complete with proper indentation and styling, so you can easily add it to your document without needing any additional formatting or adjustments.',
+      redirectionUrl: 'https://chitra-kala.vercel.app/',
+      description: 'A modern gallery app for uploading, organizing, and displaying high-quality images with smooth scrolling, lazy loading, and a seamless user experience.',
+      tags: ['Angular', 'Node.js', 'AWS - S3', 'NgOptimisedImage'],
     },
   ];
 
-  consolei(name: string) {
+  redirectTo(name: string) {
     const project = this.projects.find((project) => project.name === name)!;
-    if (project.redirectionUrl !== '')
+    if (name === 'portfolio') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (project.redirectionUrl !== '')
       window.open(project.redirectionUrl, '_blank');
     else {
       const originalDp = project.displayPic;

@@ -1,14 +1,41 @@
 <div
   style="font-family: 'Montserrat Subrayada', serif; color: #f5f5f5"
-  class="fs-2 px-4"
+  class="fs-2 px-4 text-center"
 >
-  PROJECTS
+  FEATURED PROJECTS
 </div>
+<p class="text-center" style="color: #f5f5f5">
+  Explore my latest works showcasing innovative solutions across various domains
+</p>
 <div
-  class="container d-xl-grid d-flex flex-lg-row flex-row my-3 py-4 flex-wrap"
+  class="d-flex flex-lg-row flex-row my-3 py-4 flex-wrap gap-4 justify-content-around"
 >
   @for(project of projects; track project.name){
-  <div class="card mx-4 p-3 text-center">
+  <div class="max-w-sm rounded-2xl overflow-hidden card">
+    <img
+      src="../../../assets/{{ project.displayPic }}"
+      alt="AI Dashboard"
+      class="w-full h-48 object-cover"
+      (click)="redirectTo(project.name)"
+    />
+
+    <div class="p-4 bg-dark" style="color: #f3f9f3">
+      <h3 class="text-xl font-semibold text-capitalize">{{ project.name }}</h3>
+      <p class="small-text text-gray-600 fs-6 mt-2" style="color: #f3f9f3">
+        {{ project.description }}
+      </p>
+
+      <div class="flex flex-wrap mt-3 gap-2" style="color: black">
+        @for(tag of project.tags;track tag){
+        <span class="px-3 py-1 text-sm bg-gray-200 rounded-full">{{
+          tag
+        }}</span>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="card mx-4 p-3 text-center">
     <div class="d-flex align-items-center py-1 w-auto">
       <div class="px-1">
         <span
@@ -37,12 +64,11 @@
       >
         Title : {{ project.name }}
       </p>
-      <!-- <div> -->
       <img
         src="assets/{{ project.displayPic }}"
         [alt]="project.displayPic"
         class="w-100 px-3"
-        (click)="consolei(project.name)"
+        (click)="redirectTo(project.name)"
         role="button"
         style="max-height: 170px"
       />
@@ -61,11 +87,11 @@
         mat-flat-button
         class="text-black"
         style="background-color: #feb47b"
-        (click)="consolei(project.name)"
+        (click)="redirectTo(project.name)"
       >
         DEMO
       </button>
     </div>
-  </div>
+  </div> -->
   }
 </div>

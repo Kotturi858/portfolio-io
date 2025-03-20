@@ -1,12 +1,12 @@
-@if(iconsReady){<div class="d-flex justify-content-center">
+@if(iconsReady){
+<div class="d-flex justify-content-center">
   <nav
     class="navbar shadow h-auto d-flex justify-content-center align-items-center border border-1 rounded-pill my-2 z-3"
   >
-  
     <div class="d-flex justify-content-center align-items-center flex-wrap">
       @for (navButton of navButtons; track navButton.icon){
       <a
-        class="uthine mx-3 d-flex align-items-center text-decoration-none"
+        class="text-danger mx-3 d-flex align-items-center text-decoration-none"
         role="button"
         [matTooltip]="navButton.tooltip"
         #tooltip="matTooltip"
@@ -14,8 +14,9 @@
       >
         <span
           class="material-symbols-outlined"
-          [ngStyle]="{
-            color: activeSection === navButton.label ? 'black' : 'white'
+          [ngClass]="{
+            uthine: activeSection === navButton.label,
+            pithine: activeSection !== navButton.label
           }"
         >
           {{ navButton.icon }}
@@ -23,7 +24,6 @@
       </a>
       }
     </div>
-  
   </nav>
 </div>
 }
