@@ -1,93 +1,43 @@
-<div class="projects-header">
-  <h1 class="title">FEATURED PROJECTS</h1>
-  <p class="subtitle">Explore my latest works showcasing innovative solutions across various domains</p>
-</div>
-
-<div class="projects-container">
-  @for(project of projects; track project.name){
-  <div class="project-card">
-    <div class="card-image-container">
-      <img
-        src="../../../assets/{{ project.displayPic }}"
-        alt="{{ project.name }}"
-        class="card-image"
-        (click)="redirectTo(project.name)"
-      />
-      <div class="card-overlay">
-        <button class="view-btn" (click)="redirectTo(project.name)">View Project</button>
-      </div>
-    </div>
-
-    <div class="card-content">
-      <h3 class="card-title">{{ project.name }}</h3>
-      <p class="card-description">{{ project.description | slice:0:100 }}{{project.description.length > 100 ? '...' : ''}}</p>
-      <button *ngIf="project.description.length > 100" class="read-more-btn" (click)="showFullDescription(project)">Read More</button>
-
-      <div class="card-tags">
-        @for(tag of project.tags; track tag){
-        <span class="tag">{{ tag }}</span>
-        }
-      </div>
-    </div>
+<div class="projects-section">
+  <div class="section-header">
+    <h2 class="section-title">FEATURED PROJECTS</h2>
+    <div class="title-underline"></div>
   </div>
 
-  <!-- <div class="card mx-4 p-3 text-center">
-    <div class="d-flex align-items-center py-1 w-auto">
-      <div class="px-1">
-        <span
-          class="bg-danger d-inline-block d-flex align-items-center p-2 rounded-circle"
-        ></span>
+  <div class="projects-grid">
+    @for(project of projects; track project.name) {
+      <div class="project-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="project-image">
+              <img src="../../../assets/{{ project.displayPic }}" alt="{{ project.name }}" />
+            </div>
+            <div class="project-title">
+              <h3>{{ project.name }}</h3>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="project-details">
+              <div class="description-container">
+                <p class="project-description">{{ project.description.length > 100 ? (project.description | slice:0:100) + '...' : project.description }}</p>
+                <button *ngIf="project.description.length > 100" class="read-more-btn" (click)="showFullDescription(project)">Read More</button>
+              </div>
+              <div class="project-tags">
+                @for(tag of project.tags; track tag) {
+                  <span class="tag">{{ tag }}</span>
+                }
+              </div>
+              <button class="project-link" (click)="redirectTo(project.name)">
+                <span>View Project</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="px-1">
-        <span
-          class="bg-warning d-inline-block d-flex align-items-center p-2 rounded-circle"
-        ></span>
-      </div>
-      <div class="px-1">
-        <span
-          class="bg-success d-inline-block d-flex align-items-center p-2 rounded-circle"
-        ></span>
-      </div>
-    </div>
-    <div class="card__content">
-      <p
-        class="text-start fw-bolder fs-5 mb-1"
-        style="
-          font-family: 'Montserrat Subrayada', serif;
-          font-weight: 700;
-          font-style: normal;
-        "
-      >
-        Title : {{ project.name }}
-      </p>
-      <img
-        src="assets/{{ project.displayPic }}"
-        [alt]="project.displayPic"
-        class="w-100 px-3"
-        (click)="redirectTo(project.name)"
-        role="button"
-        style="max-height: 170px"
-      />
-      <p
-        class="text-start fs-5 mb-1 lh-1 mt-2"
-        style="
-          font-family: 'Montserrat Subrayada', serif;
-          font-weight: 700;
-          font-style: normal;
-        "
-      >
-        Description :
-      </p>
-      <p class="text-start fs-6 fw-normal">{{ project.description }}</p>
-      <button
-        mat-flat-button
-        class="text-black"
-        style="background-color: #feb47b"
-        (click)="redirectTo(project.name)"
-      >
-        DEMO
-      </button>
-    </div>
-  </div> -->
-  }
+    }
+  </div>
 </div>
