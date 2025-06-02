@@ -73,69 +73,88 @@ $transition-speed: 0.6s;
 .project-card {
   width: $card-width;
   height: $card-height;
-  perspective: 1000px;
   cursor: pointer;
-  
-  // Only apply hover effect on non-touch devices
-  @media (hover: hover) and (pointer: fine) {
-    &:hover .card-inner {
-      transform: rotateY(180deg);
-    }
-  }
+  perspective: 1000px;
 }
 
-.card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform $transition-speed;
-  transform-style: preserve-3d;
-  box-shadow: $card-shadow;
-  border-radius: $card-border-radius;
+// Desktop version with 3D flip
+@media (hover: hover) and (pointer: fine) {
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform $transition-speed;
+    transform-style: preserve-3d;
+    box-shadow: $card-shadow;
+    border-radius: $card-border-radius;
+  }
   
-  &.flipped {
+  .project-card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .card-inner.flipped {
+    transform: rotateY(180deg);
+  }
+  
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: $card-border-radius;
+    overflow: hidden;
+  }
+  
+  .card-front {
+    background: $card-bg;
+    z-index: 2;
+  }
+  
+  .card-back {
+    background: $card-bg;
     transform: rotateY(180deg);
   }
 }
 
-.card-front, .card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden !important;
-  backface-visibility: hidden !important;
-  border-radius: $card-border-radius;
-  overflow: hidden;
-}
-
-// Mobile-specific styles
-@media (max-width: 576px) {
+// Mobile version with simple toggle
+@media (hover: none) {
   .project-card {
     height: 280px;
   }
   
-  // Complete override of 3D flip for mobile
   .card-inner {
-    transform-style: flat;
-    
-    &.flipped {
-      transform: none;
-    }
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    box-shadow: $card-shadow;
+    border-radius: $card-border-radius;
+  }
+  
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: $card-border-radius;
+    overflow: hidden;
+    transition: opacity 0.3s ease;
   }
   
   .card-front {
+    background: $card-bg;
     opacity: 1;
-    transition: opacity 0.3s ease;
   }
   
   .card-back {
+    background: $card-bg;
     opacity: 0;
-    transition: opacity 0.3s ease;
     transform: none;
   }
   
-  .project-card.mobile-flipped {
+  .card-inner.flipped {
     .card-front {
       opacity: 0;
       pointer-events: none;
@@ -143,11 +162,13 @@ $transition-speed: 0.6s;
     
     .card-back {
       opacity: 1;
-      z-index: 2;
+      pointer-events: auto;
     }
   }
-  
-  // Fix View Project button positioning
+}
+
+// Fix View Project button positioning for mobile
+@media (max-width: 576px) {
   .card-back .project-link {
     position: absolute;
     bottom: 10px;

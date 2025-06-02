@@ -6,7 +6,7 @@
 
   <div class="projects-grid">
     @for(project of projects; track project.name) {
-      <div class="project-card" (click)="toggleCardFlip($event)" [class.mobile-flipped]="project.isFlipped">
+      <div class="project-card" (click)="toggleCardFlip($event)">
         <div class="card-inner" [class.flipped]="project.isFlipped">
           <div class="card-front">
             <div class="project-image">
