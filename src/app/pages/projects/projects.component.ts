@@ -1,10 +1,33 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+
+// Dialog component for displaying full project description
+@Component({
+  selector: 'project-description-dialog',
+  template: `
+    <h2 mat-dialog-title>{{ data.title }}</h2>
+    <mat-dialog-content>
+      <p>{{ data.description }}</p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close>Close</button>
+    </mat-dialog-actions>
+  `,
+  imports: [MatDialogModule, MatButtonModule],
+  standalone: true
+})
+export class ProjectDescriptionDialog {
+  constructor(
+    public dialogRef: MatDialogRef<ProjectDescriptionDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: {title: string, description: string}
+  ) {}
+}
 
 @Component({
   selector: 'app-projects',
-  imports: [MatButtonModule, CommonModule],
+  imports: [MatButtonModule, CommonModule, MatDialogModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
 })
@@ -40,6 +63,19 @@ export class ProjectsComponent {
       tags: ['Angular', 'Node.js', 'AWS - S3', 'NgOptimisedImage'],
     },
   ];
+
+  constructor(private dialog: MatDialog) {}
+
+  showFullDescription(project: any) {
+    // Create a simple dialog to show the full description
+    this.dialog.open(ProjectDescriptionDialog, {
+      width: '500px',
+      data: {
+        title: project.name,
+        description: project.description
+      }
+    });
+  }
 
   redirectTo(name: string) {
     const project = this.projects.find((project) => project.name === name)!;

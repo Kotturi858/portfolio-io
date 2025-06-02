@@ -1,28 +1,240 @@
-.container {
+// Projects header styling
+.projects-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  
+  .title {
+    font-family: 'Montserrat Subrayada', serif;
+    color: #f5f5f5;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    letter-spacing: 2px;
+  }
+  
+  .subtitle {
+    color: #f5f5f5;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
+}
+
+// Projects container
+.projects-container {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-img:hover {
-  opacity: 0.5;
-  cursor: pointer;
+// Project card styling
+.project-card {
+  width: 100%;
+  min-height: 350px;
+  max-height: 420px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(25, 25, 25, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+  }
 }
 
-.card {
-  width: auto;
-  min-height: 400px;
-  border-radius: 30px;
-  padding: 0;
+// Card image container and overlay
+.card-image-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.8));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    
+    .view-btn {
+      padding: 0.6rem 1.2rem;
+      background: linear-gradient(135deg, #ff7eb3, #ff758c);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(255, 123, 172, 0.4);
+      
+      &:hover {
+        background: linear-gradient(135deg, #ff758c, #ff7eb3);
+        transform: translateY(0) scale(1.05);
+      }
+    }
+  }
+  
+  &:hover {
+    .card-image {
+      transform: scale(1.1);
+    }
+    
+    .card-overlay {
+      opacity: 1;
+      
+      .view-btn {
+        transform: translateY(0);
+      }
+    }
+  }
 }
 
-.card:hover {
-  transition: transform 0.1s linear;
-  transform: scale(1.02);
-  box-shadow: 15px 15px 30px #f8f8ff;
+// Card content styling
+.card-content {
+  padding: 1.5rem;
+  color: #f3f9f3;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    text-transform: capitalize;
+    background: linear-gradient(90deg, #f5f5f5, #d1d1d1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .card-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+    color: rgba(243, 249, 243, 0.8);
+  }
+  
+  .read-more-btn {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    color: #ff758c;
+    font-size: 0.85rem;
+    padding: 0;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    
+    &:hover {
+      color: #ff7eb3;
+      text-decoration: underline;
+    }
+  }
+}
+
+// Tags styling
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+  
+  .tag {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #614385, #516395);
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+// Responsive adjustments
+@media screen and (max-width: 1200px) {
+  .projects-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
 }
 
 @media screen and (max-width: 576px) {
-  .small-text {
-    font-size: 12px !important;
+  .projects-header .title {
+    font-size: 2rem;
+  }
+  
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .project-card {
+    min-height: 320px;
+  }
+  
+  .card-image-container {
+    height: 120px;
+  }
+  
+  .card-content {
+    padding: 0.8rem;
+    
+    .card-title {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+    
+    .card-description {
+      font-size: 0.75rem;
+      margin-bottom: 0.6rem;
+      line-height: 1.4;
+    }
+    
+    .read-more-btn {
+      font-size: 0.75rem;
+      margin-bottom: 0.6rem;
+    }
+  }
+  
+  .card-tags .tag {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.65rem;
   }
 }

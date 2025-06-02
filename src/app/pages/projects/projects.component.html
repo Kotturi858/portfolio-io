@@ -1,35 +1,31 @@
-<div
-  style="font-family: 'Montserrat Subrayada', serif; color: #f5f5f5"
-  class="fs-2 px-4 text-center"
->
-  FEATURED PROJECTS
+<div class="projects-header">
+  <h1 class="title">FEATURED PROJECTS</h1>
+  <p class="subtitle">Explore my latest works showcasing innovative solutions across various domains</p>
 </div>
-<p class="text-center" style="color: #f5f5f5">
-  Explore my latest works showcasing innovative solutions across various domains
-</p>
-<div
-  class="d-flex flex-lg-row flex-row my-3 py-4 flex-wrap gap-4 justify-content-around"
->
+
+<div class="projects-container">
   @for(project of projects; track project.name){
-  <div class="max-w-sm rounded-2xl overflow-hidden card">
-    <img
-      src="../../../assets/{{ project.displayPic }}"
-      alt="AI Dashboard"
-      class="w-full h-48 object-cover"
-      (click)="redirectTo(project.name)"
-    />
+  <div class="project-card">
+    <div class="card-image-container">
+      <img
+        src="../../../assets/{{ project.displayPic }}"
+        alt="{{ project.name }}"
+        class="card-image"
+        (click)="redirectTo(project.name)"
+      />
+      <div class="card-overlay">
+        <button class="view-btn" (click)="redirectTo(project.name)">View Project</button>
+      </div>
+    </div>
 
-    <div class="p-4 bg-dark" style="color: #f3f9f3">
-      <h3 class="text-xl font-semibold text-capitalize">{{ project.name }}</h3>
-      <p class="small-text text-gray-600 fs-6 mt-2" style="color: #f3f9f3">
-        {{ project.description }}
-      </p>
+    <div class="card-content">
+      <h3 class="card-title">{{ project.name }}</h3>
+      <p class="card-description">{{ project.description | slice:0:100 }}{{project.description.length > 100 ? '...' : ''}}</p>
+      <button *ngIf="project.description.length > 100" class="read-more-btn" (click)="showFullDescription(project)">Read More</button>
 
-      <div class="flex flex-wrap mt-3 gap-2" style="color: black">
-        @for(tag of project.tags;track tag){
-        <span class="px-3 py-1 text-sm bg-gray-200 rounded-full">{{
-          tag
-        }}</span>
+      <div class="card-tags">
+        @for(tag of project.tags; track tag){
+        <span class="tag">{{ tag }}</span>
         }
       </div>
     </div>
