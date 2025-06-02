@@ -50,7 +50,7 @@ export class ProjectsComponent {
     },
     {
       name: 'quizzie',
-      displayPic: 'construction-crane-svgrepo-com.svg',
+      displayPic: 'work-in-progress.gif',
       redirectionUrl: '',
       description:
         'This site allows you to participate in quizzes across various programming languages, enabling you to test your skills and compete against other players. It provides a platform for learning, growth, and friendly competition in programming challenges.',
@@ -59,10 +59,37 @@ export class ProjectsComponent {
     },
     {
       name: 'Kallos Galleria',
-      displayPic: 'construction-crane-svgrepo-com.svg',
+      displayPic: 'work-in-progress.gif',
       redirectionUrl: 'https://chitra-kala.vercel.app/',
       description: 'A modern gallery app for uploading, organizing, and displaying high-quality images with smooth scrolling, lazy loading, and a seamless user experience.',
       tags: ['Angular', 'Node.js', 'AWS - S3', 'NgOptimisedImage'],
+      isFlipped: false,
+    },
+    {
+      name: 'Kotturi-toaster',
+      displayPic: 'toaster-home.png',
+      redirectionUrl: 'https://kotturi-toaster-demo.vercel.app/',
+      description:
+        'A modern toast notification npm package with multiple animations, positions, durations, sticky notifications, and many more features. It is designed to be highly customizable and easy to use, making it the perfect choice for any Angular application.',
+      tags: ['Angular', 'npm', 'typescript'],
+      isFlipped: false,
+    },
+    {
+      name: 'Single Page To-do',
+      displayPic: 'todo-image.png',
+      redirectionUrl: 'https://single-page-todo.vercel.app/',
+      description:
+        'A modern to-do app built with Firebase (Spark tier) and Angular, featuring user authentication, different priority levels, filtering, search, and designed for different individuals. ',
+      tags: ['Angular', 'Firebase', 'typescript', 'material'],
+      isFlipped: false,
+    },
+    {
+      name: 'Form Builder',
+      displayPic: 'work-in-progress.gif',
+      redirectionUrl: 'https://form-builder.vercel.app/',
+      description:
+        'A modern form builder built with Firebase (Spark tier) and Angular, featuring user authentication, different priority levels, filtering, search, and designed for different individuals. ',
+      tags: ['Angular', 'typescript', 'material'],
       isFlipped: false,
     },
   ];
