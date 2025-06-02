@@ -233,7 +233,6 @@ $transition-speed: 0.6s;
 .card-back {
   background: $card-bg;
   color: $primary-color;
-  transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
   justify-content: center;
