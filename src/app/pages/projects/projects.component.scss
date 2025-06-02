@@ -76,8 +76,11 @@ $transition-speed: 0.6s;
   perspective: 1000px;
   cursor: pointer;
   
-  &:hover .card-inner {
-    transform: rotateY(180deg);
+  // Only apply hover effect on non-touch devices
+  @media (hover: hover) and (pointer: fine) {
+    &:hover .card-inner {
+      transform: rotateY(180deg);
+    }
   }
 }
 
@@ -90,6 +93,10 @@ $transition-speed: 0.6s;
   transform-style: preserve-3d;
   box-shadow: $card-shadow;
   border-radius: $card-border-radius;
+  
+  &.flipped {
+    transform: rotateY(180deg);
+  }
 }
 
 .card-front, .card-back {

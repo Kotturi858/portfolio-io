@@ -46,6 +46,7 @@ export class ProjectsComponent {
         'material',
         'angular animations',
       ],
+      isFlipped: false,
     },
     {
       name: 'quizzie',
@@ -54,6 +55,7 @@ export class ProjectsComponent {
       description:
         'This site allows you to participate in quizzes across various programming languages, enabling you to test your skills and compete against other players. It provides a platform for learning, growth, and friendly competition in programming challenges.',
       tags: ['Angular', 'PrimeNG', 'rxjs', 'Spring Boot', 'PostgreSQL'],
+      isFlipped: false,
     },
     {
       name: 'Kallos Galleria',
@@ -61,6 +63,7 @@ export class ProjectsComponent {
       redirectionUrl: 'https://chitra-kala.vercel.app/',
       description: 'A modern gallery app for uploading, organizing, and displaying high-quality images with smooth scrolling, lazy loading, and a seamless user experience.',
       tags: ['Angular', 'Node.js', 'AWS - S3', 'NgOptimisedImage'],
+      isFlipped: false,
     },
   ];
 
@@ -91,6 +94,28 @@ export class ProjectsComponent {
         project.displayPic = originalDp;
         console.log('Reverted object:', project);
       }, 3000);
+    }
+  }
+
+  toggleCardFlip(event: MouseEvent) {
+    // Find the project card element
+    const projectCard = (event.currentTarget as HTMLElement);
+    
+    // Find the project associated with this card
+    const projectName = projectCard.querySelector('.project-title h3')?.textContent?.trim() || '';
+    const project = this.projects.find(p => p.name === projectName);
+    
+    if (project) {
+      // Toggle the flipped state
+      project.isFlipped = !project.isFlipped;
+      
+      // Stop propagation for buttons inside the card to prevent toggling when clicking buttons
+      const buttons = projectCard.querySelectorAll('button');
+      buttons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          e.stopPropagation();
+        }, { once: true });
+      });
     }
   }
 }
