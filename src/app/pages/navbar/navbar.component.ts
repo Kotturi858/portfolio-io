@@ -1,11 +1,17 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener, Inject, Renderer2, ViewChild } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @Component({
   selector: 'app-navbar',
-  imports: [MatTooltipModule, MatCardModule, CommonModule],
+  imports: [
+    MatTooltipModule,
+    MatCardModule,
+    CommonModule,
+    MatButtonToggleModule,
+  ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
@@ -26,7 +32,7 @@ export class NavbarComponent {
   }
 
   @HostListener('window:scroll', ['$event'])
-  onScroll(event: Event): void {
+  onScroll(): void {
     const sections = ['#home', '#about', '#contacts', '#projects', '#resume'];
 
     sections.forEach((section) => {
@@ -34,6 +40,7 @@ export class NavbarComponent {
       if (element) {
         const rect = element.getBoundingClientRect();
         if (rect.top <= window.innerHeight / 2 && rect.bottom >= 0) {
+          
           this.activeSection = section;
         }
       }

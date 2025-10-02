@@ -6,38 +6,65 @@
 
   <div class="projects-grid">
     @for(project of projects; track project.name) {
-      <div class="project-card" (click)="toggleCardFlip($event)">
-        <div class="card-inner" [class.flipped]="project.isFlipped">
-          <div class="card-front">
-            <div class="project-image">
-              <img src="../../../assets/{{ project.displayPic }}" alt="{{ project.name }}" />
-            </div>
-            <div class="project-title">
-              <h3>{{ project.name }}</h3>
-            </div>
+    <div class="project-card" (click)="toggleCardFlip($event)">
+      <div class="card-inner" [class.flipped]="project.isFlipped">
+        <div class="card-front">
+          <div class="project-image">
+            <img
+              src="../../../assets/{{ project.displayPic }}"
+              alt="{{ project.name }}"
+            />
           </div>
-          <div class="card-back">
-            <div class="project-details">
-              <div class="description-container">
-                <p class="project-description">{{ project.description.length > 100 ? (project.description | slice:0:100) + '...' : project.description }}</p>
-                <button *ngIf="project.description.length > 100" class="read-more-btn" (click)="showFullDescription(project)">Read More</button>
-              </div>
-              <div class="project-tags">
-                @for(tag of project.tags; track tag) {
-                  <span class="tag">{{ tag }}</span>
-                }
-              </div>
-              <button class="project-link" (click)="redirectTo(project.name)">
-                <span>View Project</span>
-                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
+          <div class="project-title">
+            <h3>{{ project.name }}</h3>
+          </div>
+        </div>
+        <div class="card-back">
+          <div class="project-details">
+            <div class="description-container">
+              <p class="project-description">
+                {{
+                  project.description.length > 100
+                    ? (project.description | slice : 0 : 100) + "..."
+                    : project.description
+                }}
+              </p>
+              <button
+                *ngIf="project.description.length > 100"
+                class="read-more-btn"
+                (click)="showFullDescription(project)"
+              >
+                Read More
               </button>
             </div>
+            <div class="project-tags">
+              @for(tag of project.tags; track tag) {
+              <span class="tag">{{ tag }}</span>
+              }
+            </div>
+            <button class="project-link" (click)="redirectTo(project.name)">
+              <span>View Project</span>
+              <svg
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
           </div>
         </div>
       </div>
+    </div>
     }
   </div>
 </div>
+
+<br />
+<br />

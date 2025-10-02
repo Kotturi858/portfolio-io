@@ -1,28 +1,51 @@
 @if(iconsReady){
 <div class="d-flex justify-content-center">
   <nav
-    class="navbar shadow h-auto d-flex justify-content-center align-items-center border border-1 rounded-pill my-2 z-3"
+    class="navbar h-auto d-flex justify-content-center align-items-center my-1 z-3"
   >
     <div class="d-flex justify-content-center align-items-center flex-wrap">
-      @for (navButton of navButtons; track navButton.icon){
-      <a
-        class="text-danger mx-3 d-flex align-items-center text-decoration-none"
-        role="button"
-        [matTooltip]="navButton.tooltip"
-        #tooltip="matTooltip"
-        [href]="navButton.label"
-      >
-        <span
-          class="material-symbols-outlined"
-          [ngClass]="{
-            uthine: activeSection === navButton.label,
-            pithine: activeSection !== navButton.label
-          }"
+      <section>
+        <mat-button-toggle-group
+          name="favoriteColor"
+          aria-label="Favorite Color"
+          [hideSingleSelectionIndicator]="true"
+          class=""
+          style="backdrop-filter: blur(3px)"
         >
-          {{ navButton.icon }}
-        </span>
-      </a>
-      }
+          @for (navButton of navButtons; track navButton.icon){
+          <mat-button-toggle
+            id="myDiv"
+            [ngClass]="{
+              uthine: activeSection === navButton.label,
+              pithine: activeSection !== navButton.label
+            }"
+          >
+            <a
+              class="text-danger mx-1 d-flex align-items-center text-decoration-none"
+              role="button"
+              [matTooltip]="navButton.tooltip"
+              #tooltip="matTooltip"
+              [href]="navButton.label"
+            >
+              <span
+                class="material-symbols-outlined"
+                style="color: lavenderblush"
+              >
+                {{ navButton.icon }}
+              </span>
+              <span
+                class="fs-5 text-light ms-2 nav-text"
+                [ngClass]="{
+                  uthine: activeSection === navButton.label,
+                  pithine: activeSection !== navButton.label
+                }"
+                >{{ navButton.tooltip | titlecase }}</span
+              >
+            </a>
+          </mat-button-toggle>
+          }
+        </mat-button-toggle-group>
+      </section>
     </div>
   </nav>
 </div>
