@@ -11,6 +11,9 @@
   background-color: rebeccapurple !important;
 }
 
+.mat-button-toggle-checked {
+  --mat-sys-secondary-container: none;
+}
 
 @media (max-width: 768px) {
   .nav-text {
